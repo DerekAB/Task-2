@@ -18,11 +18,13 @@ while not(answer.strip().upper() == "TRIANGLE" or answer.strip().upper() == "CIR
     answer = input("Please enter a valid answer: ")                                        #if the user enters an invalid answer, it will loop until they do 
 
 if answer.strip().upper() == "TRIANGLE":
-    triangleLength = float(input("Please enter the length of triangle in centimetres: "))           #Have the user enter the triangle length
+    triangleFirstSide = float(input("Please enter the length of the first side of the triangle in centimetres: "))           #Have the user enter the triangle length
+    triangleSecondSide = float(input("Please enter the second side of the triangle: "))
     
-    triangleArea = (triangleLength * triangleLength) / 2                            #Calculating the area and the perimeter
-    trianglePerimeter = triangleLength * 3
-    
+    triangleThirdSide = math.sqrt((triangleFirstSide ** 2) + (triangleSecondSide ** 2))
+    triangleArea = (triangleFirstSide * triangleSecondSide) / 2                            #Calculating the area and the perimeter
+    trianglePerimeter = triangleFirstSide + triangleSecondSide + triangleThirdSide          # Added the ability to enter a second side
+                                                                                            #The program will calculate the hypotenuse and use it in its calculations
     print("The area of the triangle is: " + str(triangleArea) + "cm^2.")
     print("The perimeter of the triangle is " + str(trianglePerimeter) + "cm.")
     

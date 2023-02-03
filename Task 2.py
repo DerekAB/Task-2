@@ -29,13 +29,14 @@ if answer.strip().upper() == "TRIANGLE":
     print("The perimeter of the triangle is " + str(trianglePerimeter) + "cm.")
     
 if answer.strip().upper() == "RECTANGLE":
-    rectangleLength = float(input("Please enter the length of the rectangle: "))                #Have the user enter the rectangle length
+    rectangleFirstSide = float(input("Please enter the length of the first side of the rectangle: "))                #Have the user enter the rectangle length
+    rectangleSecondSide = float(input("Please enter the length of the second side: "))
     
-    rectangleArea = rectangleLength * 2                                                #Calculate the reactangle area and perimeter
-    rectanglePerimeter = rectangleLength * 4 
+    rectangleArea = rectangleFirstSide * rectangleSecondSide                                                #Calculate the reactangle area and perimeter
+    rectanglePerimeter = (rectangleFirstSide * 2) + (rectangleSecondSide * 2)                               #Added the ability for the user to enter the second length
     
-    print("The area of the rectangle is " + str(rectangleArea) + "cm^2.")
-    print("The perimeter of the rectangle is " + str(rectanglePerimeter) + "cm.")
+    print("The area of the rectangle is " + str(rectangleArea) + "cm^2.")                                   #The program will now calculate the area and perimeter based on 
+    print("The perimeter of the rectangle is " + str(rectanglePerimeter) + "cm.")                           #both lengths
     
 if answer.strip().upper() == "CIRCLE":
     circleRadius = float(input("Please enter the radius of the circle: "))                        #Have the user enter the circle radius
